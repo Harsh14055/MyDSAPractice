@@ -107,6 +107,8 @@ def run():
                 ind = int(input("Enter the index at which you want to delete : "))
                 l1.deleteAtindex(ind)
                 l1.display()
+            case 7:
+                l1.display()
         n = input("Enter n/N to stop : ")
 if __name__ == '__main__':
     run()
