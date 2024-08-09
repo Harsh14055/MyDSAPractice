@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Structures Practice</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <h1>My Data Structures Practice</h1>
+        <nav class="navbar">
+            <a href="#introduction">Introduction</a>
+            <a href="#toc">Table of Contents</a>
+            <a href="#follow">Follow Me</a>
+            <a href="#" id="darkModeToggle">Dark Mode</a>
+        </nav>
+    </header>
+
+    <div class="breadcrumbs">
+        <a href="#">Home</a> &gt; <span>Data Structures</span>
+    </div>
+
+    <input type="text" id="searchBox" placeholder="Search topics...">
+
+    <nav id="toc">
+        <h2>Table of Contents</h2>
+        <ul>
+            <li><a href="https://github.com/Harsh14055/MyDSAPractice/blob/main/stack.c" target="_blank" title="View the C implementation of stack using arrays">Stack Implementation using Arrays (C code)</a></li>
+            <li><a href="https://github.com/Harsh14055/MyDSAPractice/blob/main/stackUSINGlinkedlist.c" target="_blank" title="View the C implementation of stack using linked list">Stack Implementation using Linked List (C code)</a></li>
+            <li><a href="https://github.com/Harsh14055/MyDSAPractice/blob/main/queue.c" target="_blank" title="View the C implementation of queue using arrays">Queue Implementation using Arrays (C code)</a></li>
+            <li><a href="https://github.com/Harsh14055/MyDSAPractice/blob/main/QLinked.c" target="_blank" title="View the C implementation of queue using linked list">Queue Implementation Using Linked List</a></li>
+            <li><button class="toggle">Linked List</button>
+                <div class="content">
+                    <ol>
+                        <li>Singly Linked List: <a href="https://github.com/Harsh14055/MyDSAPractice/blob/main/linked.c" target="_blank" title="View the C implementation of singly linked list">C code</a> <a href="https://github.com/Harsh14055/MyDSAPractice/blob/main/SinglyLinkedList.py" target="_blank" title="View the Python implementation of singly linked list">Py Code</a></li>
+                        <li>Doubly Linked List: <a href="https://github.com/Harsh14055/MyDSAPractice/blob/main/doublyLL.c" target="_blank" title="View the C implementation of doubly linked list">C code</a> <a href="https://github.com/Harsh14055/MyDSAPractice/blob/main/DoublyLinkedList.py" target="_blank" title="View the Python implementation of doubly linked list">Py Code</a></li>
+                        <li>Circular Linked List: <a href="https://github.com/Harsh14055/MyDSAPractice/blob/main/doublyLL.c" target="_blank" title="View the C implementation of circular linked list">C code</a> <a href="https://github.com/Harsh14055/MyDSAPractice/blob/main/DoublyLinkedList.py" target="_blank" title="View the Python implementation of circular linked list">Py Code</a></li>
+                    </ol>
+                </div>
+            </li>
+            <li><a href="https://github.com/Harsh14055/MyDSAPractice/blob/main/Binarytree.c" target="_blank" title="View the C implementation of binary tree">Binary Tree Implementation (C code)</a></li>
+        </ul>
+    </nav>
+
+    <footer>
+        <div id="follow">
+            <h3>Follow Me</h3>
+            <ul>
+                <li><a href="https://www.hackerrank.com/profile/harry1455" target="_blank" title="Visit my HackerRank profile"><i class="fab fa-hackerrank"></i> HackerRank</a></li>
+                <li><a href="https://www.linkedin.com/in/harsh-singh-tiwari-7632b1295/" target="_blank" title="Visit my LinkedIn profile"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                <li><a href="https://leetcode.com/u/harshgdsc14055/" target="_blank" title="Visit my LeetCode profile"><i class="fas fa-code"></i> LeetCode</a></li>
+                <li><a href="https://github.com/Harsh14055" target="_blank" title="Visit my GitHub profile"><i class="fab fa-github"></i> GitHub</a></li>
+            </ul>
+        </div>
+        <p>&copy; 2024 Harsh Singh Tiwari</p>
+    </footer>
+
+    <script>
+        // JavaScript for collapsible sections
+        document.querySelectorAll('.toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                button.classList.toggle('active');
+                if (button.classList.contains('active')) {
+                    content.style.display = 'block';
+                } else {
+                    content.style.display = 'none';
+                }
+            });
+        });
+
+        // JavaScript for dark mode toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+
+        // JavaScript for search functionality
+        const searchBox = document.getElementById('searchBox');
+        searchBox.addEventListener('input', function () {
+            const filter = searchBox.value.toLowerCase();
+            const listItems = document.querySelectorAll('#toc ul li');
+
+            listItems.forEach(item => {
+                const text = item.textContent || item.innerText;
+                if (text.toLowerCase().includes(filter)) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>
